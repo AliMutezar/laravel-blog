@@ -81,7 +81,7 @@
         </div>
         
     @else
-        <p class="text-center fs-4">Post Not Found</p>
+        <p class="text-center fs-4">Post Not Found Nih</p>
     @endif
 
     <div class="d-flex justify-content-center">
