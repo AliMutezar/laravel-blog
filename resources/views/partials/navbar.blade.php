@@ -19,6 +19,19 @@
             <a class="nav-link {{ ($active === "categories" ? 'active fw-bold' : '') }}" href="/categories">Categories</a>
           </li>
         </ul>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/login" class="nav-link {{ ($active === "login" ? 'active fw-bold' : '') }}">
+              <i class="bi bi-door-open-fill"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/register" class="nav-link {{ ($active === "register" ? 'active fw-bold' : '') }}">
+              <i class="bi bi-pen-fill"></i> Register
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 </nav>
