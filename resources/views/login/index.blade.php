@@ -6,6 +6,14 @@
       <main class="form-signin w-100 m-auto">
           <form>
             <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+
+            {{-- Flash Message --}}
+            @if (session()->has('success'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            @endif
         
             <div class="form-floating">
               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
