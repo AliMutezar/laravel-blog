@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\DashboarController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -49,9 +49,19 @@ Route::get('/categories', function() {
     ]); 
 });
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::controller(LoginController::class)->group(function() {
+    Route::get('/login', 'index')->name('login')->middleware('guest');
+    Route::post('/login', 'authenticate');
+    Route::post('/logout', 'logout');
+});
+
+Route::controller(RegisterController::class)->group(function() {
+    Route::get('/register', 'index')->middleware('guest');
+    Route::post('/register', 'store');
+});
+
+
+Route::get('/dashboard', [DashboarController::class, 'index'])->middleware('auth');
 
 
 
