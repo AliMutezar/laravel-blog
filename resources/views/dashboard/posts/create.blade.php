@@ -7,6 +7,8 @@
 
 
     <div class="col-lg-6">
+
+        {{-- karena pake route resource, form method post ini akan otomatis mengarah ke method store di DashboardPostController --}}
         <form method="POST" action="/dashboard/posts">
             @csrf
             <div class="mb-3">
