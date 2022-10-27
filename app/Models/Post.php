@@ -63,9 +63,10 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-       // Overriding route binding model untuk mengembalikan nilai selain dari column id, contohnya kita pake column slug untuk melihat detail dari setiap post
-       public function getRouteKeyName()
-       {
-           return 'slug';
-       }
+    // Overriding route binding model untuk mengembalikan nilai selain dari column id, contohnya kita pake column slug untuk melihat detail dari setiap post
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }

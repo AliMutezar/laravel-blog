@@ -6,7 +6,7 @@
     </div>
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-8">
 
         {{-- karena pake route resource, form method post ini akan otomatis mengarah ke method store di DashboardPostController --}}
         <form method="POST" action="/dashboard/posts">
@@ -17,20 +17,42 @@
             </div>
             <div class="mb-3">
               <label for="slug" class="form-label">Slug</label>
-              <input type="text" class="form-control" id="slug" name="slug">
+              <input type="text" class="form-control" id="slug" name="slug" readonly>
             </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" name="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <input id="body" type="hidden" name="body">
+                <trix-editor input="body"></trix-editor>
+            </div>
+
             <button type="submit" class="btn btn-primary">Create Post</button>
         </form>
     </div>
 
-    {{-- <script>
-        const title = document.querySelector('#title');
-        const title = document.querySelector('#slug');
+    <script>
 
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slue.value = data.slug)
+        const title = document.querySelector("#title");
+        const slug = document.querySelector("#slug");
+
+        title.addEventListener("change", function() {
+            let preslug = title.value;
+            preslug = preslug.replace(/ /g,"-");
+            slug.value = preslug.toLowerCase();
         });
-    </script> --}}
+
+        document.addEventListener('trix-file-accept', function(e) {
+            e.preventDefault();
+        });
+
+    </script>
 @endsection
