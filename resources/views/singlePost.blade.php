@@ -12,7 +12,10 @@
                 <article class="my-3">
                     {!! $postingan->body !!}
                 </article>
-                <a href="/posts" class="d-block mt-3">Back to Post</a>
+                <a href="/posts"
+                    class="text-decoration-none btn text-success d-flex align-items-center gap-1">
+                    <i class="bi bi-arrow-left-short fs-5"></i>Back to other posts
+                </a>
             </div>
         </div>
     </div>
