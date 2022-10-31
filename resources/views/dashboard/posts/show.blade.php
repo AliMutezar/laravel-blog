@@ -11,12 +11,18 @@
                     class="text-decoration-none btn text-success d-flex align-items-center gap-1">
                     <span data-feather="arrow-left"></span>Back to my posts
                 </a>
-                <a href="" class="text-decoration-none btn text-warning d-flex align-items-center gap-1">
+                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="text-decoration-none btn text-warning d-flex align-items-center gap-1">
                     <span data-feather="edit"></span>Edit post
                 </a>
-                <a href="" class="text-decoration-none btn text-danger d-flex align-items-center gap-1">
-                    <span data-feather="trash"></span> Delete post
-                </a>
+                <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                    @method('delete')
+                    @csrf
+
+                    <button class="btn text-danger d-flex align-items-center gap-1" onclick="return confirm('Are you sure to delete this post ?')">
+                        <span data-feather="trash"></span> Delete post
+                    </button>
+                    
+                </form>
             </div>
 
             <img src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" class="img-fluid"
