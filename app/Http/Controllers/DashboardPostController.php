@@ -46,13 +46,20 @@ class DashboardPostController extends Controller
 
         // buat ngetest setiap field datanya ke kirim atau ngga
         // return $request;
+        // return $request->file('image')->store('post-images');
 
         $validateData = $request->validate([
             "title" =>  'required|max:255',
             "slug"  =>  'required|unique:posts',
+            "image" =>  'image|file|max:1024',
             "body"  =>  'required',
             "category_id"   =>  'required'  
         ]);
+
+        // check apakah ada file yg di upload
+        if($request->file('image')) {
+            $validateData['image']  = $request->file('image')->store('post-images');
+        }
 
         $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 100, 'Lanjutin bacanya');

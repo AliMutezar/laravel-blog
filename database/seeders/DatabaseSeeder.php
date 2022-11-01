@@ -21,11 +21,12 @@ class DatabaseSeeder extends Seeder
 
 
         // Membuat data dummy dengan seeder
-        // User::create([
-        //     'name'      =>  'Ali',
-        //     'email'     =>  'aamutezar@gmail.com',
-        //     'password'  => bcrypt('12345')
-        // ]);
+        User::create([
+            'name'      =>  'Ali Mutezar',
+            'username'  =>  'alimutezar',
+            'email'     =>  'aamutezar@gmail.com',
+            'password'  => bcrypt('12345')
+        ]);
 
         // User::create([
         //     'name'      =>  'Rakaboyong',
