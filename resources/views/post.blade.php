@@ -2,8 +2,8 @@
 
 {{-- Hero --}}
 <div class="context text-center">
-    <h1 class="fs-1 text-black fw-semibold">Stay Curious.</h1>
-    <h4 class="text-poppins mb-5">Discover stories, thinking, and expertise <br /> from writers on any topic</h4>
+    <h1 class="text-black fw-semibold">Stay Curious.</h1>
+    <h3 class="text-poppins mb-5 mt-3 sub-title">Discover stories, thinking, and expertise <br /> from writers on any topic</h3>
     <a class="btn-black rounded-pill px-5 py-2 text-poppins text-decoration-none" role="button" href="#target-read">Start Reading</a>
 </div>
 
@@ -70,25 +70,28 @@
                         <div class="col">
                             <div class="d-inline-flex">
                                 <div class="flex-shrink-0 align-self-center">
-                                    <img src="/img/person.jpg" class="person" alt="person">
+                                    <img src="/img/person.jpg" class="profile-img" alt="person">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                        <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none text-yellow"> {{ $post->author->name }} </a>
-                                        
-                                        {{-- <span class="d-flex">
-                                            in {!! "&nbsp;" !!} <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none text-yellow d-none d-sm-block"> {{  '  ' .  $post->category->name }}</a>
-                                        </span> --}}
+                                    <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none text-yellow fw-semibold"> {{ $post->author->name }} </a>
+                                    
+                                    {{-- <span>
+                                            in<a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none text-yellow d-none d-sm-block"> {{$post->category->name }}</a>
+                                    </span> --}}
+                                    <p class="small text-poppins text-secondary text-medium mt-1"> 
+                                        {{ $post->created_at->diffForHumans() }} <i class="ms-2 bi bi-star fst-normal">{!! "&nbsp;" !!} 23 <span class="d-none d-sm-block d-md-inline">likes</span></i>
+                                        <i class="ms-2 bi bi-share-fill fst-normal d-none d-sm-block d-md-inline">{!! "&nbsp;" !!} share</i>
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="mb-5">
                                 <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-black">
-                                    <h5 class="fw-semibold title-moile mt-3">{{ $post->title }}</h5>
+                                    <h5 class="fw-bold title-moile mt-3">{{ $post->title }}</h5>
                                 </a>
-                                <p class="text-secondary text-poppins mt-3 d-none d-sm-block text-excerpt">{{ $post->excerpt }}</p>
-                                <p class="small text-poppins text-secondary"> 
-                                    {{ $post->created_at->diffForHumans() }} <i class="bi bi-dot"></i> 
-                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow">Read More <i class="bi bi-arrow-right"></i> </a>
+                                <p class="text-secondary text-poppins mt-3 d-none d-sm-block text-medium">{{ $post->excerpt }}</p>
+                                <p class="text-poppins text-secondary text-medium">
+                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow fw-semibold">Read More <i class="bi bi-arrow-right"></i> </a>
                                 </p>
                             </div>
                         </div>
