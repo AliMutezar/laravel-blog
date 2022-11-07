@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -22,7 +23,8 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () {
     return view('home', [
         "title"     =>  "Home",
-        "active"    =>  "home"
+        "active"    =>  "home",
+        "posts"     =>  Post::latest()->paginate(10)
     ]);
 });
 

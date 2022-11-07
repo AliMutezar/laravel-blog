@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+.bg-yellow {
+    background-color: #FFC017;
+    color: #191919;
+}
+
+.bg-black {
+    border-left-color: #191919;
+    color: #FFC017;
+}
+
+.text-yellow, .text-yellow:hover {
+    color: #FFC017;
+}
+
+.text-black {
+    color: #191919;
+}
+
+.btn-black, .btn-black:hover {
+    color: #fff !important;
+    background-color: #191919 !important;
+    border-color: #191919 !important;
+}
+
+.fs-1 {
+    font-size: calc(4rem + 1.5vw) !important;
+}
+
+.text-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-img {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.person {
+    height: 35px; 
+    width: 40px;
+    border-radius: 50%;
+}
+
+.thumbnail {
+    height: 130px;
+    width: 200px;
+}
+
+.text-excerpt {
+    font-size: 12px ;
+}
+
+
+/* Style Mobile */
+@media (max-width: 575.98px) { 
+    .text-mobile {
+        font-size: 14px;
+    }
+
+    .title-moile {
+        font-size: 16px;
+    }
+
+}

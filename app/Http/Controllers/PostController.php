@@ -18,18 +18,19 @@ class PostController extends Controller
         $title = '';
         if(request('category')) {
             $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
+            $title = 'All post in ' . $category->name;
         }
 
         if(request('author')) {
             $author = User::firstWhere('username', request('author'));
-            $title = ' by ' . $author->name;
+            $title = 'All post by ' . $author->name;
         }
 
         return view('post', [
-            "title"     =>  "All Posts" . $title,
+            "title"     =>  $title,
             "active"    =>  "posts",
-            "posts"     =>  Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
+            "posts"     =>  Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
+            "categories" => Category::all()
             // "posts"     =>  Post::with(['author', 'category'])->latest()->get() bisa pake cara ini atau taro di model
         ]);
     }
