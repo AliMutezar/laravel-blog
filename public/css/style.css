@@ -174,4 +174,5 @@
 .pagination > .active > span:hover {
     background-color: #ffc017;
     border-color: #ffc017;
+    color: #191919;
 }

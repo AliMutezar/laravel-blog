@@ -33,7 +33,7 @@
             </article>
 
             <div class="d-grid gap-2 text-poppins my-4">
-                <a class="btn btn-yellow" href="/posts" role="button">Back to other posts</a>
+                <a class="btn btn-yellow" href="/posts" role="button"><i class="bi bi-arrow-left me-3"></i> Back to other posts</a>
             </div>
         </div>
     </div>

@@ -91,7 +91,7 @@
                                 </a>
                                 <p class="text-secondary text-poppins mt-3 d-none d-sm-block text-medium">{{ $post->excerpt }}</p>
                                 <p class="text-poppins text-secondary text-medium">
-                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow fw-semibold">Read More <i class="bi bi-arrow-right"></i> </a>
+                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow fw-semibold">Read More <i class="ms-2 bi bi-arrow-right"></i> </a>
                                 </p>
                             </div>
                         </div>
