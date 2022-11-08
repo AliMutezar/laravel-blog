@@ -10,7 +10,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register.index', [
+        return view('template.register', [
             "title"     =>  "Register",
             "active"    =>  "register"
         ]);
@@ -30,6 +30,6 @@ class RegisterController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
-        return redirect('/login')->with('success', 'Registered account was successful! Please login');
+        return redirect('/login')->with('success', 'Registered account was successful');
     }
 }

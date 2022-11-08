@@ -32,14 +32,15 @@
                   {{ $message }}
                 </div>
               @enderror
-
             </div>
+
             <div class="form-floating">
               <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
               <label for="password">Password</label>
             </div>
       
             <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            
             <small class="d-block text-center mt-3">Not Registed ?!
               <a href="/register">Register Now!</a>
             </small>

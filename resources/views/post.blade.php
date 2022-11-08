@@ -73,13 +73,15 @@
                                     <img src="/img/person.jpg" class="profile-img" alt="person">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none text-yellow fw-semibold"> {{ $post->author->name }} </a>
+                                    <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none text-yellow fw-semibold text-medium"> {{ $post->author->name }} </a>
                                     
                                     {{-- <span>
                                             in<a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none text-yellow d-none d-sm-block"> {{$post->category->name }}</a>
                                     </span> --}}
                                     <p class="small text-poppins text-secondary text-medium mt-1"> 
-                                        {{ $post->created_at->diffForHumans() }} <i class="ms-2 bi bi-star fst-normal">{!! "&nbsp;" !!} 23 <span class="d-none d-sm-block d-md-inline">likes</span></i>
+                                        {{ $post->created_at->diffForHumans() }} 
+
+                                        <i class="ms-2 bi bi-star fst-normal">{!! "&nbsp;" !!} 23 <span class="d-none d-sm-block d-md-inline">likes</span></i>
                                         <i class="ms-2 bi bi-share-fill fst-normal d-none d-sm-block d-md-inline">{!! "&nbsp;" !!} share</i>
                                     </p>
                                 </div>
@@ -91,7 +93,7 @@
                                 </a>
                                 <p class="text-secondary text-poppins mt-3 d-none d-sm-block text-medium">{{ $post->excerpt }}</p>
                                 <p class="text-poppins text-secondary text-medium">
-                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow fw-semibold">Read More <i class="ms-2 bi bi-arrow-right"></i> </a>
+                                    <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-yellow">Read More <i class="ms-2 bi bi-arrow-right"></i> </a>
                                 </p>
                             </div>
                         </div>
