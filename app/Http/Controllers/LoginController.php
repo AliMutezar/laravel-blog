@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view("template.login", [
+        return view("template.login.index", [
             "title"     =>  "Login",
             "active"    =>  "login"
         ]);

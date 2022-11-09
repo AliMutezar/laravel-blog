@@ -17,7 +17,7 @@ class DashboardPostController extends Controller
     public function index()
     {
         
-        return view('dashboard.posts.index', [
+        return view('template.dashboard.posts.index', [
 
             // query post yang sesuai dengan user
             "posts" =>  Post::where('user_id', auth()->user()->id)->get() 
@@ -31,7 +31,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create', [
+        return view('template.dashboard.posts.create', [
             'categories'    =>  Category::all()
         ]);
     }
@@ -77,7 +77,7 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('dashboard.posts.show', [
+        return view('template.dashboard.posts.show', [
             'post'  => $post
         ]);
     }
@@ -91,7 +91,7 @@ class DashboardPostController extends Controller
     public function edit(Post $post)
     {
         // return $post;
-        return view('dashboard.posts.edit', [
+        return view('template.dashboard.posts.edit', [
             'post'          =>  $post,
             'categories'    =>  Category::all()
         ]);

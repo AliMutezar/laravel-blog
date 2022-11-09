@@ -65,7 +65,7 @@ Route::controller(RegisterController::class)->group(function() {
 
 
 Route::get('/dashboard', function() {
-    return view('dashboard.index');
+    return view('template.dashboard.index');
 })->middleware('auth');
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
