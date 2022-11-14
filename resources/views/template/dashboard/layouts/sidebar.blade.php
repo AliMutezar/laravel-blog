@@ -7,7 +7,7 @@
       </a>
     </li>
 
-    <li class="nav-item mt-3 posts">
+    <li class="nav-item mt-3 posts {{ Request::is('dashboard/posts*') ? 'active' : '' }}">
       <a class="nav-link" href="/dashboard/posts">
         <i class="mdi mdi-file-document-box menu-icon"></i>
         <span class="menu-title">My Post</span>
@@ -24,7 +24,7 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="/dashboard/categories">Categories</a></li>
+          <li class="nav-item"> <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">Categories</a></li>
           <li class="nav-item"> <a class="nav-link" href="#">User</a></li>
         </ul>
       </div>

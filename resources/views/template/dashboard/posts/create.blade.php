@@ -72,7 +72,7 @@
                                 <i class="menu-icon mdi mdi-message-plus"></i>
                                 <span class="ms-2"></span> Create Post
                             </button>
-                            <a href="/dashboard/posts" class="btn btn-light">Back to posts</a>
+                            <a href="/dashboard/posts" class="btn btn-light">Back to list</a>
                         </div>
                     </form>
                   </div>
@@ -82,20 +82,6 @@
     </div>
 
     <script>
-        const title = document.querySelector("#title");
-        const slug = document.querySelector("#slug");
-
-        title.addEventListener("change", function() {
-            let preslug = title.value;
-            preslug = preslug.replace(/ /g,"-");
-            slug.value = preslug.toLowerCase();
-        });
-
-        document.addEventListener('trix-file-accept', function(e) {
-            e.preventDefault();
-        });
-
-
         // preview Image
         function previewImage() {
             const image = document.querySelector('#image');

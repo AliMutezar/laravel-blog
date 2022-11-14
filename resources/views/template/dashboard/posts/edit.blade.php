@@ -6,7 +6,7 @@
             <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Edit new post</h4>
+                    <h4 class="card-title">Edit post</h4>
 
                     {{-- karena pake route resource, form method post ini akan otomatis mengarah ke method store di DashboardPostController --}}
                     <form class="forms-sample" method="POST" action="/dashboard/posts/{{ $post->slug }}" enctype="multipart/form-data">

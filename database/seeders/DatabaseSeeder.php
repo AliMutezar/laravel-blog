@@ -37,20 +37,20 @@ class DatabaseSeeder extends Seeder
         // Membuat data dummy dengan factory
         User::factory(5)->create();
 
-        Category::create([
-            'name'  =>  'Web Programming',
-            'slug'  =>  'web-programming'      
-        ]);
+        // Category::create([
+        //     'name'  =>  'Web Programming',
+        //     'slug'  =>  'web-programming'      
+        // ]);
 
-        Category::create([
-            'name'  =>  'Personal',
-            'slug'  =>  'personal'      
-        ]);
+        // Category::create([
+        //     'name'  =>  'Personal',
+        //     'slug'  =>  'personal'      
+        // ]);
 
-        Category::create([
-            'name'  =>  'Web Design',
-            'slug'  =>  'web-design'      
-        ]);
+        // Category::create([
+        //     'name'  =>  'Web Design',
+        //     'slug'  =>  'web-design'      
+        // ]);
 
 
         Post::factory(20)->create();
